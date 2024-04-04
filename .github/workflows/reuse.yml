@@ -19,10 +19,10 @@ jobs:
           OUTPUT1: ${{needs.setup.outputs.OWNER_NAME}}
         run: echo "$OUTPUT1"
       
-  # call-workflow:
-  #   uses: ${{env.PATH}}
-  #   with:
-  #     who-to-greet: '@octocat'
+  call-workflow:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      who-to-greet: '@octocat'
     
   # use-output:
   #   runs-on: ubuntu-latest
