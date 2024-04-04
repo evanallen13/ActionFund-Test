@@ -9,7 +9,7 @@ jobs:
       OWNER_NAME: ${{ steps.OWNER_NAME.outputs.OWNER_NAME }}
     steps:
       - id: OWNER_NAME
-        run: echo "OWNER_NAME=hello" >> "$GITHUB_OUTPUT"
+        run: echo "OWNER_NAME=${{github.repository_owner}}" >> "$GITHUB_OUTPUT"
         
   job2:
     runs-on: ubuntu-latest
