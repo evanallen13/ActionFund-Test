@@ -2,9 +2,12 @@ name: Reuse other workflow
 
 on: [workflow_dispatch]
 
+env:
+  PATH: ./.github/workflows/reusable.yml
+
 jobs:
   call-workflow:
-    uses: ./.github/workflows/reusable.yml
+    uses: ${{ env.PATH }}
     with:
       who-to-greet: '@octocat'
     
