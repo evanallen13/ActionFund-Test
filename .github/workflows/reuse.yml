@@ -6,7 +6,7 @@ jobs:
   setup: 
     runs-on: ubuntu-latest
     outputs:
-      OWNER_NAME: ${{ steps.step1.outputs.test }}
+      OWNER_NAME: ${{ steps.step1.outputs.OWNER_NAME }}
     steps:
       - id: OWNER_NAME
         run: echo "OWNER_NAME=hello" >> "$GITHUB_OUTPUT"
