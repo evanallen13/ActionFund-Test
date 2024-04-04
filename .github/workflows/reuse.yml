@@ -2,14 +2,20 @@ name: Reuse other workflow
 
 on: [workflow_dispatch]
 
-env:
-  PATH: "evanallen13/ActionFund-Test/.github/workflows/reusable.yml@main"
-
 jobs:
+  setup: 
+    runs-on: ubuntu-latest
+    outputs:
+      OWNER_NAME: ${{ steps.step1.outputs.test }}
+    steps:
+      - id: OWNER_NAME
+        run: echo "OWNER_NAME=hello" >> "$GITHUB_OUTPUT"
+        
   echo_path: 
     runs-on: ubuntu-latest
+    needs: setup
     steps:
-      - run: echo "${{env.PATH}}"
+      - run: echo "Owner: ${{ needs.setup.outputs.OWNER_NAME }}"
       
   # call-workflow:
   #   uses: ${{env.PATH}}
