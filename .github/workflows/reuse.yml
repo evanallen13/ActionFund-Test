@@ -20,6 +20,7 @@ jobs:
         run: echo "$OUTPUT1"
       
   call-workflow:
+    needs: setup
     uses: ./.github/workflows/reusable.yml
     with:
       who-to-greet: '@octocat'
