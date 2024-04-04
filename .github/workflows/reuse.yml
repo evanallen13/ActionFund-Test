@@ -3,11 +3,11 @@ name: Reuse other workflow
 on: [workflow_dispatch]
 
 env:
-  PATH: evanallen13/ActionFund-Test/.github/workflows/reusable.yml@main
+  PATH: "evanallen13/ActionFund-Test/.github/workflows/reusable.yml@main"
 
 jobs:
   call-workflow:
-    uses: ${{ env.PATH }}
+    uses: evanallen13/ActionFund-Test/.github/workflows/reusable.yml@main
     with:
       who-to-greet: '@octocat'
     
