@@ -3,7 +3,7 @@ name: Reuse other workflow
 on: [workflow_dispatch]
 
 env:
-  PATH: ./.github/workflows/reusable.yml
+  PATH: evanallen13/ActionFund-Test/.github/workflows/reusable.yml@main
 
 jobs:
   call-workflow:
