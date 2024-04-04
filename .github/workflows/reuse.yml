@@ -21,9 +21,9 @@ jobs:
       
   call-workflow:
     needs: setup
-    uses: ./.github/workflows/reusable.yml
+    uses: evanallen13/ActionFund-Test/blob/main/.github/workflows/reusable.yml@main
     with:
-      who-to-greet: '@octocat'
+      who-to-greet: ${{github.repository_owner}}
     
   # use-output:
   #   runs-on: ubuntu-latest
